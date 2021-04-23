@@ -68,7 +68,7 @@ def main():
                 while not End:
                     #石消し処理
                     wkAns = 0
-                    for i in reversed(range(H)):
+                    for i in reversed(range(y + 1)):
                         for j in range(W - K + 1):
                             r = j + 1
                             while r <= W - 1 and wk[i][j] == wk[i][r]:
@@ -82,7 +82,7 @@ def main():
                 
                     #石落とし処理
                     End = True
-                    for i in reversed(range(H - 1)):
+                    for i in reversed(range(y)):
                         for j in range(W):
                             if wk[i][j] != 0 and wk[i+1][j] == 0:
                                 sn = i + 1
@@ -97,6 +97,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 # K>=4の時、消せる石がないため0を出力するコードを追加
 # ※制約より、初期状態では隣り合う石の色は異なっているため、
